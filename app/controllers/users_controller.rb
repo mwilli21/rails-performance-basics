@@ -10,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @photos = @user.feed
+    @photos = @user.feed.includes(
+       { owner: :avatar_image_attachment }, 
+       :image_attachment,
+       { comments: [:author] } )
   end
 
   def discover

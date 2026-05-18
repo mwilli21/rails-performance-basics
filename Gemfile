@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "rack-mini-profiler"
 gem "rails", "~> 8.0.2"               # The web framework
 gem "propshaft"                       # Asset pipeline (CSS, JS, images)
 gem "pg", "~> 1.1"                    # PostgreSQL database adapter
@@ -37,6 +38,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "bullet"
   gem "amazing_print"                 # Pretty print Ruby objects in console
   gem "annotaterb"                    # Add schema info to model files
   gem "better_errors"                 # Better error pages with console
