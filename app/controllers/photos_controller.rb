@@ -1,6 +1,11 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ show edit likes update destroy ]
 
+  def show
+    @photos = Photo.all.limit(25)
+    render layout: false
+  end
+
   # GET /photos/1 or /photos/1.json
   def show
     authorize! @photo

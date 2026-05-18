@@ -1,0 +1,8 @@
+<% @photos.each do |photo| %>
+  <article>
+    <img src="<%= photo.image %>">
+    <p><%= photo.owner.username %></p>
+    <p><%= photo.caption %></p>
+    <p><%= photo.comments.count %> comments</p>
+  </article>
+<% end %>
